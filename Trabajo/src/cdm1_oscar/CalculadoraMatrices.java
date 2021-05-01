@@ -35,7 +35,7 @@ public class CalculadoraMatrices {
 				potenciaDeDosMatrices();
 				break;
 			case 4:
-				// transponerMatriz();
+				transponerMatriz();
 				break;
 			case 5:
 				// diagonalPrincipal();
@@ -169,6 +169,32 @@ public class CalculadoraMatrices {
 			System.out.println();
 			System.out.println();
 		}
+	}
+	
+	private static void transponerMatriz() {
+
+		Scanner snc = new Scanner(System.in);
+		int matrizA[][] = CrearMatrices();
+		int matrizC[][] = new int[matrizA[0].length][matrizA.length]; // nueva matriz para almacenar el resultado
+		int i, j;
+
+		for (i = 0; i < matrizA.length; i++) {
+			for (j = 0; j < matrizA[i].length; j++) {
+				matrizC[j][i] = matrizA[i][j];
+			}
+		}
+
+		// imprime el resultado
+		System.out.println("Matriz transpuesta");
+
+		for (i = 0; i <= matrizA.length; i++) {
+			for (j = 0; j < matrizA[0].length; j++) {
+				System.out.print((matrizC[i][j]) + " ");
+			}
+
+			System.out.println();
+		}
+
 	}
 	
 }
