@@ -197,4 +197,28 @@ public class CalculadoraMatrices {
 
 	}
 	
+	private static void diagonalPrincipal() {
+		Scanner snc = new Scanner(System.in);
+		int[][] matrizA = CrearMatrices();
+		int[] diagonalPrincipal = new int[matrizA.length]; // nueva matriz para almacenar el resultado
+		int x, y;
+
+		for (int i = 0; i < matrizA.length; i++) {
+			for (int j = 0; j < matrizA[i].length; j++) {
+				if (i == j) {
+					diagonalPrincipal[i] = matrizA[i][j];
+				}
+			}
+		}
+
+		// imprime el resultado
+		System.out.println("Diagonal Principal");
+		for (int i = 0; i < diagonalPrincipal.length; i++) {
+			System.out.print(diagonalPrincipal[i]);
+		}
+
+		System.out.println();
+		System.out.println();
+	}
+	
 }
