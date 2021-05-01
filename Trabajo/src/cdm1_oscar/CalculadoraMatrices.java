@@ -29,7 +29,7 @@ public class CalculadoraMatrices {
 				SumarMatrices();
 				break;
 			case 2:
-				// EscalarMatriz();
+				EscalarMatriz();
 				break;
 			case 3:
 				// potenciaDeDosMatrices();
@@ -113,5 +113,33 @@ public class CalculadoraMatrices {
 		}
 	}
 	
+	private static void EscalarMatriz() {
+
+		Scanner snc = new Scanner(System.in);
+
+		int[][] matrizA = CrearMatrices();
+
+		int i, j;
+
+		// incializo numero para escalar matriz
+		System.out.println("Introducir numero:");
+		int n = snc.nextInt();
+
+		// nueva matriz para almacenar el resultado
+		int[][] matrizC = new int[matrizA.length][matrizA[0].length];
+
+		// imprime el resultado
+		System.out.println("Matriz escalada");
+
+		for (int x = 0; x < matrizC.length; x++) {
+			for (int y = 0; y < matrizC[x].length; y++) {
+				System.out.print((matrizC[x][y] = n * matrizA[x][y]) + " ");
+			}
+		}
+
+		System.out.println();
+		System.out.println();
+	}
+
 	
 }
