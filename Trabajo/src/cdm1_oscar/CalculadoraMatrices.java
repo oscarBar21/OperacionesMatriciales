@@ -32,7 +32,7 @@ public class CalculadoraMatrices {
 				EscalarMatriz();
 				break;
 			case 3:
-				// potenciaDeDosMatrices();
+				potenciaDeDosMatrices();
 				break;
 			case 4:
 				// transponerMatriz();
@@ -141,5 +141,34 @@ public class CalculadoraMatrices {
 		System.out.println();
 	}
 
+	private static void potenciaDeDosMatrices() {
+		Scanner dato = new Scanner(System.in);
+		int[][] matrizA = CrearMatrices();
+		int[][] matrizB = CrearMatrices();
+		int y, x;
+
+		// nueva matriz para almacenar el resultado
+		int[][] producto = new int[matrizB.length][matrizB[0].length];
+
+		for (int a = 0; a < matrizB[0].length; a++) {
+			for (int i = 0; i < matrizA.length; i++) {
+				int suma = 0;
+				for (int j = 0; j < matrizA[0].length; j++) {
+					suma += matrizB[i][j] * matrizB[j][a];
+				}
+				producto[i][a] = suma;
+			}
+		}
+
+		// imprime el resultado
+		System.out.print("Imprimiendo  Multiplicacion\n");
+		for (int i = 0; i < matrizB.length; i++) {
+			for (int j = 0; j < matrizB[0].length; j++) {
+				System.out.printf("%d ", producto[i][j]);
+			}
+			System.out.println();
+			System.out.println();
+		}
+	}
 	
 }
