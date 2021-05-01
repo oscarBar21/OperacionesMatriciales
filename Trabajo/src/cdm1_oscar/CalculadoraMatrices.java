@@ -254,4 +254,24 @@ public class CalculadoraMatrices {
 		}
 	}
 	
+	private static void potenciaMatrizCuadrada() {
+
+		int matrizA[][] = CrearMatrices();
+		int matrizC[][] = new int[matrizA.length][matrizA[0].length];
+
+		for (int i = 0; i < matrizA[0].length; i++) {
+			for (int j = 0; j < matrizA.length; j++) {
+				for (int k = 0; k < matrizA.length; k++) {
+					matrizC[i][j] += (matrizA[i][k] * matrizA[k][j]);
+				}
+			}
+		}
+
+		// Imprime la matriz resultado
+		System.out.println("Matriz resultado: ");
+		for (int i = 0; i < matrizC.length; i++) {
+			System.out.println(Arrays.toString(matrizC[i]));
+		}
+	}
+	
 }
