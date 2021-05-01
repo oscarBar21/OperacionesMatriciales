@@ -2,6 +2,8 @@ package cdm1_oscar;
 
 import java.util.Scanner;
 
+import ejercicios.$missing$;
+
 public class CalculadoraMatrices {
 
 	public static void main(String[] args) {
@@ -60,4 +62,26 @@ public class CalculadoraMatrices {
 
 	}
 
+	private static int[][] CrearMatrices() {
+
+		Scanner scn = new Scanner(System.in);
+
+		System.out.println("Introduce el numero de filas:");
+		int filas = scn.nextInt();
+
+		System.out.println("Introduce el numero de columnas:");
+		int columnas = scn.nextInt();
+
+		int[][] matriz = new int[filas][columnas];
+
+		System.out.println("Introduce la matriz:");
+		for (int i = 0; i < filas; i++) {
+			for (int j = 0; j < columnas; j++) {
+				int numero = scn.nextInt();
+				matriz[i][j] = numero;
+			}
+		}
+		return matriz;
+	}
+	
 }
