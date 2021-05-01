@@ -274,4 +274,35 @@ public class CalculadoraMatrices {
 		}
 	}
 	
+	private static void restarMatrices() {
+
+		Scanner snc = new Scanner(System.in);
+		int matrizA[][] = CrearMatrices();
+
+		int matrizB[][] = CrearMatrices();
+
+		// nueva matriz para almacenar el resultado
+		int matrizC[][] = new int[matrizA.length][matrizB[0].length];
+		int i, j;
+
+		for (i = 0; i < matrizA.length; i++) {
+			for (j = 0; j < matrizB[0].length; j++) {
+				matrizC[i][j] = matrizA[i][j] - matrizB[i][j];
+			}
+		}
+
+		// imprime el resultado
+		System.out.println("Resultado de la resta:");
+
+		for (i = 0; i < matrizA.length; i++) {
+			for (j = 0; j < matrizB[0].length; j++) {
+				System.out.print(matrizC[i][j] + " ");
+			}
+
+			System.out.println();
+			System.out.println();
+
+		}
+	}
+	
 }
