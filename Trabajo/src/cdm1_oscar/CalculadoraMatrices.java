@@ -1,5 +1,6 @@
 package cdm1_oscar;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class CalculadoraMatrices {
@@ -219,6 +220,38 @@ public class CalculadoraMatrices {
 
 		System.out.println();
 		System.out.println();
+	}
+	
+	private static void matrizSimetrica() {
+
+		int matrizA[][] = CrearMatrices();
+		int matrizC = matrizA.length * matrizA[0].length;
+		int contador = 0;
+
+		// coompara las matrices
+		if (matrizA.length == matrizA[0].length) {
+
+			// Genera un array con la diagonal principal en él.
+			for (int i = 0; i < matrizA.length; i++) {
+				for (int j = 0; j < matrizA[0].length; j++) {
+					if (matrizA[i][j] == matrizA[j][i]) {
+						contador++;
+						if (contador == matrizC) {
+							System.out.println("La matriz es simetrica: ");
+
+							// Imprime el resultado
+							System.out.println("Matriz resultado: ");
+							for (int x = 0; x < matrizA.length; x++) {
+								System.out.println(Arrays.toString(matrizA[x]));
+							}
+						}
+					}
+				}
+			}
+
+		} else {
+			System.out.println("La matriz no es simetrica");
+		}
 	}
 	
 }
