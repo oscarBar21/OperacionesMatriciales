@@ -2,8 +2,6 @@ package cdm1_oscar;
 
 import java.util.Scanner;
 
-import ejercicios.$missing$;
-
 public class CalculadoraMatrices {
 
 	public static void main(String[] args) {
@@ -28,7 +26,7 @@ public class CalculadoraMatrices {
 
 			switch (opcion) {
 			case 1:
-				// SumarMatrices();
+				SumarMatrices();
 				break;
 			case 2:
 				// EscalarMatriz();
@@ -83,5 +81,37 @@ public class CalculadoraMatrices {
 		}
 		return matriz;
 	}
+	
+	private static void SumarMatrices() {
+
+		Scanner snc = new Scanner(System.in);
+		int matrizA[][] = CrearMatrices();
+
+		int matrizB[][] = CrearMatrices();
+
+		// nueva matriz para almacenar el resultado
+		int matrizC[][] = new int[matrizA.length][matrizB[0].length];
+		int i, j;
+
+		for (i = 0; i < matrizA.length; i++) {
+			for (j = 0; j < matrizB[0].length; j++) {
+				matrizC[i][j] = matrizA[i][j] + matrizB[i][j];
+			}
+		}
+
+		// imprime el resultado
+		System.out.println("Resultado de la suma :");
+
+		for (i = 0; i < matrizA.length; i++) {
+			for (j = 0; j < matrizB[0].length; j++) {
+				System.out.print(matrizC[i][j] + " ");
+			}
+
+			System.out.println();
+			System.out.println();
+
+		}
+	}
+	
 	
 }
